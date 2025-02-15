@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import '../../themes/app_theme.dart';
-import '../../utils/constants.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:flutter/cupertino.dart';
 class ProfileScreen extends StatefulWidget {
@@ -19,6 +18,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(title:  Text(translate('profile')),),
       body:  FadeInUp(
@@ -83,24 +83,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       const SizedBox(height: 10),
                       const Divider(),
                       const SizedBox(height: 10),
-
-                      _buildSettingsTile(
-                        title: translate('darkMode'),
-                        leadingIcon: Icons.dark_mode,
-                        trailing: Switch(
-                          value: _isDarkMode,
-                          onChanged: (value) {
-                            setState(() {
-                              _isDarkMode = value;
-                            });
-                          },
-                          activeColor: AppTheme.primaryColor,
-                        ),
-                      ),
-
-                      const SizedBox(height: 10),
-                      const Divider(),
-                      const SizedBox(height: 10),
                       _buildSettingsTile(
                         title: translate('about'),
                         leadingIcon: Icons.info,
@@ -150,60 +132,66 @@ class _ProfileScreenState extends State<ProfileScreen> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        final locale = Localizations.localeOf(context);
         return ZoomIn(
           child: AlertDialog(
             title:  Text(translate('language.selection.title')),
-            content: Text(translate('language.selection.message')),
+            content:  Directionality(
+              textDirection: locale.languageCode == 'ar' ? TextDirection.rtl : TextDirection.ltr,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min, // <-- Ajout de mainAxisSize
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(translate('language.selection.message'),textAlign: TextAlign.start,),
+                    SizedBox(height: 20,),
+                    TextButton(
+                      child:  Text(translate('language.name.en_US'),textAlign: TextAlign.start,),
+                      onPressed: () {
+                        setState(() {
+                          _selectedLanguage = 'en_US';
+                        });
+                        Navigator.pop(context, 'en_US');
+                      },
+                    ),
+                    TextButton(
+                      child: Text(translate('language.name.fr'),textAlign: TextAlign.start,),
+                      onPressed: () {
+                        setState(() {
+                          _selectedLanguage = 'fr';
+                        });
+                        Navigator.pop(context, 'fr');
+                      },
+                    ),
+                    TextButton(
+                      child:  Text(translate('language.name.es'),textAlign: TextAlign.start,),
+                      onPressed: () {
+                        setState(() {
+                          _selectedLanguage = 'es';
+                        });
+                        Navigator.pop(context, 'es');
+                      },
+                    ),
+                    TextButton(
+                      child:  Text(translate('language.name.ar'),textAlign: TextAlign.start,),
+                      onPressed: () {
+                        setState(() {
+                          _selectedLanguage = 'ar';
+                        });
+                        Navigator.pop(context, 'ar');
+                      },
+                    ),
+
+
+                  ],
+                ),
+              ),
+            ),
             backgroundColor: Colors.grey[50],
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
             ),
             actions: <Widget>[
-              TextButton(
-                child: Text(translate('language.name.en_US')),
-                onPressed: () {
-                  setState(() {
-                    _selectedLanguage = 'en_US';
-                  });
-                  Navigator.pop(context, 'en_US');
-                },
-              ),
-              TextButton(
-                child: Text(translate('language.name.fr')),
-                onPressed: () {
-                  setState(() {
-                    _selectedLanguage =translate('language.name.fr');
-                  });
-                  Navigator.pop(context, 'fr');
-                },
-              ),
-              TextButton(
-                child: Text(translate('language.name.es')),
-                onPressed: () {
-                  setState(() {
-                    _selectedLanguage = translate('language.name.es');
-                  });
-                  Navigator.pop(context, 'es');
-                },
-              ),
-              TextButton(
-                child: Text(translate('language.name.ar')),
-                onPressed: () {
-                  setState(() {
-                    _selectedLanguage = translate('language.name.ar');
-                  });
-                  Navigator.pop(context, 'ar');
-                },
-              ),
-              TextButton(
-                child: Text(translate('language.name.ru')),
-                onPressed: () {
-                  setState(() {
-                    _selectedLanguage = translate('language.name.ru');
-                  });
-                  Navigator.pop(context, 'ru');
-                },
-              ),
               TextButton(
                 child: Text(translate('cancel')),
                 onPressed: () => Navigator.pop(context, null),
@@ -216,6 +204,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       if(value != null) changeLocale(context, value);
     });
   }
+
   void _showAboutDialog(BuildContext context) {
     showDialog(
       context: context,

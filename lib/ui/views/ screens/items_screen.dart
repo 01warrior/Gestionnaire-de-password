@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 import 'package:provider/provider.dart';
 import '../../../data/models/password_model.dart';
 import '../../controllers/password_controller.dart';
@@ -39,7 +40,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
     }).toList();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Items'),
+        title:Text(translate('Items')),
       ),
       body:  Padding(
         padding: const EdgeInsets.all(16.0),
@@ -55,7 +56,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
                   });
                 },
                 decoration: InputDecoration(
-                  hintText: 'Search passwords...',
+                  hintText: translate('Search passwords...'),
                   prefixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -76,7 +77,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
             ),
             const SizedBox(height: 10),
             if(Constants.categories.isNotEmpty) ... [
-              const Text('Categories',
+              Text(translate('Categories'),
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),

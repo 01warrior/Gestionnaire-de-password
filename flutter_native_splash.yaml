@@ -1,0 +1,27 @@
+flutter_native_splash:
+  # Couleur de fond principale (pour le mode clair)
+  color: "#ffffff"
+
+  # Configuration pour le mode sombre
+  color_dark: "#121212"
+
+  # configuration pour android 12+
+  android_12:
+    color: "#ffffff"
+    icon_background_color: "#ffffff"
+    icon_background_color_dark: "#121212"
+
+      # Ajustements spécifiques si tu souhaites en avoir (sinon tu peux commenter ces lignes)
+      #color_android: "#ffffff"
+      #color_dark_android: "#121212"
+      #color_ios: "#ffffff"
+      #color_dark_ios: "#121212"
+
+      # Autres paramètres que j'ai commenté pour plus de simplicité (tu peux les décommenter si tu souhaites les utiliser)
+      #fullscreen: true
+      #android_screen_orientation: portrait
+
+      # Utilisation du mode Center pour l'image sur toutes les plateformes
+    #web_image_mode: center
+  #android_gravity: center
+  #ios_content_mode: center

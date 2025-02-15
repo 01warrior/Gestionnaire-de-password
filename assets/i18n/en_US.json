@@ -17,7 +17,7 @@
   "newItem": "New password",
   "saveWithEase": "Save your new password easily",
   "addNew": "Add new +",
-  "aboutContent": "This is a password manager application developed in Flutter.",
+  "aboutContent": "Take control of your online security, one password at a time. This application was developed by Soumaila SAVADOGO with Flutter for a simple and secure user experience.",
   "about": "About",
   "close" : "Close",
   "profile": "Profile",
@@ -38,5 +38,11 @@
   "edit" : "Edit",
   "pleaseEnterWebsiteName": "Please enter website name",
   "pleaseEnterUsername": "Please enter username/email address",
-  "pleaseEnterPassword": "Please enter your password"
+  "pleaseEnterPassword": "Please enter your password",
+  "accueil": "Home",
+  "cle":"Key",
+  "setting":"Setting",
+  "items" : "Items",
+  "searchPassword" : "Search passwords...",
+  "categories": "Categories"
 }

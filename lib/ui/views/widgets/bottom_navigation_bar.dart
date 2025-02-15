@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
@@ -54,19 +55,19 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       items: [
         FlashyTabBarItem(
           icon: const Icon(HugeIcons.strokeRoundedGoogleHome),
-          title: const Text('Accueil'),
+          title:  Text(translate('accueil')),
         ),
         FlashyTabBarItem(
           icon: const Icon(HugeIcons.strokeRoundedCheckList),
-          title: const Text('Items'),
+          title: Text(translate('items')),
         ),
         FlashyTabBarItem(
           icon: const Icon(HugeIcons.strokeRoundedListSetting),
-          title: const Text('Clé'),
+          title: Text(translate('cle')),
         ),
         FlashyTabBarItem(
           icon: const Icon(HugeIcons.strokeRoundedAccountSetting01),
-          title: const Text('Setting'),
+          title: Text(translate('setting')),
         ),
       ],
     );

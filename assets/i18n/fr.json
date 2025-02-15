@@ -17,7 +17,7 @@
   "newItem": "Nouveau mot de passe",
   "saveWithEase": "Enregistrez facilement votre nouveau mot de passe",
   "addNew": "Ajouter nouveau +",
-  "aboutContent": "Ceci est une application de gestion de mots de passe développée par Soumaila SAVADOGO avec Flutter.",
+  "aboutContent": "Reprenez le contrôle de votre sécurité en ligne, un mot de passe à la fois. Cette application a été développée par Soumaila SAVADOGO avec Flutter pour une expérience utilisateur simple et sécurisée.",
   "about": "À propos",
   "close" : "Fermer",
   "profile": "Profil",
@@ -38,5 +38,13 @@
   "edit" : "Modifier",
   "pleaseEnterWebsiteName": "Veuillez entrer le nom du site",
   "pleaseEnterUsername": "Veuillez entrer le nom d'utilisateur/l'adresse e-mail",
-  "pleaseEnterPassword": "Veuillez entrer votre mot de passe"
+  "pleaseEnterPassword": "Veuillez entrer votre mot de passe",
+  "accueil": "Accueil",
+  "cle":"Clé",
+  "setting":"Parametres",
+  "items" : "Elements",
+  "searchPassword" : "Rechercher un mot de passe...",
+  "categories": "Catégories"
+
+
 }
